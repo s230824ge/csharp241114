@@ -44,6 +44,10 @@
 
 ```bash
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+# 有時候可能還需要安裝 dotnet-aspnet-codegenerator
+dotnet tool install -g dotnet-aspnet-codegenerator
+# 或是更新 dotnet-aspnet-codegenerator
+dotnet tool update -g dotnet-aspnet-codegenerator
 ```
 
 ### **安裝完成後重新還原套件**
