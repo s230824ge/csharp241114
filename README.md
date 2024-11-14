@@ -35,6 +35,18 @@
     dotnet run --launch-profile https
     ```
 
+## 如何使用 swagger 
+
+### 透過 Swashbuckle.AspNetCore 套件
+
+#### **安裝 Swashbuckle.AspNetCore 套件**
+
+在 `Terminal` 中，跳轉到專案目錄下執行指令，將 Swashbuckle.AspNetCore 套件安裝到專案中：
+
+```bash
+dotnet add package Swashbuckle.AspNetCore
+```
+
 ## 如何使用 ASP.NET Core Scaffolding 工具
 
 ### 透過 `dotnet aspnet-codegenerator` 進行
