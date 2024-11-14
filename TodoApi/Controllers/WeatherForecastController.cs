@@ -1,4 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+using System.Linq;
 using TodoApi.Models;
 
 namespace TodoApi.Controllers;
@@ -20,13 +23,15 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    public ActionResult<IEnumerable<WeatherForecast>> Get()
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast(
+        var forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast(
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
             Random.Shared.Next(-20, 55),
             Summaries[Random.Shared.Next(Summaries.Length)]
         ))
-        .ToArray();
+        .ToList();
+
+        return Ok(forecasts);
     }
 }
