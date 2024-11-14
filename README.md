@@ -30,6 +30,9 @@
 4. 執行專案：
     ```bash
     dotnet run
+    # 執行 https，需要先確定有建立和信任自簽 cert 
+    dotnet dev-certs https --trust
+    dotnet run --launch-profile https
     ```
 
 ## 如何使用 ASP.NET Core Scaffolding 工具
